@@ -38,8 +38,25 @@ app.use(function(err, req, res, next) {
   res.render('error',{title: 'error'});
 });
 
+
 module.exports = app;
 
-const fs = require('fs');
-const docx = require('');
+const PizZip = require('pizzip');
+const Docxtemplater = require('docxtemplater');
 
+const fs = require('fs');
+// const path = require('path');
+
+let content = fs
+  .readFileSync(path.resolve(__dirname,'test.docx'),'binary');
+
+let zip = new PizZip(content);
+let doc;
+try {
+    doc = new Docxtemplater(zip);
+} catch(error) {
+    // Catch compilation errors (errors caused by the compilation of the template : misplaced tags)
+    errorHandler(error);
+}
+var text = doc.getFullText()
+console.log(text,'text');
