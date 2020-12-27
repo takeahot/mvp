@@ -8,25 +8,57 @@
 // import {TVisualBlocksV2} from  '_PP_VISUALBLOCKS_V2'
 // import {TProject} from '_PP_PROJECT_Rew'
 // import { resolve } from 'path'
+
 const http = require('http');
 const readline = require('readline');
 const fetch = require('node-fetch');
 const { runInThisContext } = require('vm');
 
-//simple unitlity
+/*
+ * simple unitlity
+ * use for authentification
+ * 
+ */
+
+//convert string to URI string
 const convertToRFC1738 = str => str.replace( /[^a-z\.-]/g, c => '%' + c.charCodeAt(0).toString(16) );
+//convert objects data to URI format
 const toUrlEncoded = obj => Object.keys(obj).map(k => convertToRFC1738(k).replace(/\u0020/g,'+') + '=' + convertToRFC1738(obj[k]).replace(/\u0020/g,'+')).join('&');
-const wrapFe = 
+
+//const wrapFe = 
+
+/**
+  * Calss for authentication user to Caseone
+  *
+  * @this Auth 
+  * @param {string} url - url address Caseone instance
+  * @param {string} login - login
+  * @param {string} pass - password
+  */
 
 class Auth {
+  /**
+   * @constructor Auth
+   * 
+   * @param {string} url - url address Caseone instance
+   * @param {string} login - login
+   * @param {string} pass - password
+   * @constant {string} token - token from Caseone instance approved atuthentication
+  */
   constructor(url,login,pass = "") {
     this.url = url;
     this.login = login;
     this.pass = pass;
   }
- 
 
-  //method for include pass security
+  /**
+   * Method for heidden input to console
+   * 
+   * @function
+   * 
+   * @param {function} query 
+   */
+
   hiddenQuestion = query => new Promise((resolve, reject) => {
     const rl = readline.createInterface({
       input: process.stdin,
@@ -155,3 +187,5 @@ AAuth.getToken()
   }).listen(3000);
 });
 */
+
+module.exports.auth = Auth;
