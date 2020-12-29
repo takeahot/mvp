@@ -162,7 +162,7 @@ class Case {
     this.auth = auth;
   }
 }
-
+/*
 gazprom_mv = {
   u : 'https://gazpromrtv.ru.case.one/',
   l : 'casepro-ipm@team-pravo.ru',
@@ -177,6 +177,7 @@ AAuth.getToken()
   let Cs = new Cases(AAuth);
   Cs.CreateCase();
 })
+*/
 /*
 .then(token => {
   http.createServer(function (req, res) {

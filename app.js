@@ -7,6 +7,7 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var diffDocRouter = require("./routes/diffdoc");
+var make_scirpt_by_VS = require('./routes/write_script_by_VS');
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/diff",diffDocRouter);
+app.use('/script',make_scirpt_by_VS);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
