@@ -144,7 +144,7 @@ class Cases {
     .then (res => res.json())
     .then (res => console.log(res,'create Case'))
   }
-  GetAllCases = () => {
+  GetList /*GetAllCases*/ = () => {
     fetch(`${this.auth.url}api/Projects/CreateProject?api-version=53`,{
       method:'post',
       headers:{'Content-Type': 'application/json',
@@ -160,6 +160,118 @@ class Cases {
 class Case {
   constructor (auth) {
     this.auth = auth;
+  }
+}
+
+class Scripts {
+  constructor (auth) {
+    this.auth = auth;
+  }
+
+  list = [];
+
+  getList = () => {
+    return fetch(`${this.auth.url}api/AutomationScripts/GetAutomationScripts?api-version=53`,{
+      method:'post',
+      headers:{'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.auth.token,
+                'Accept': 'application/json'},
+      body: `{
+        "IsActive": true 
+      }`
+    })
+    .then (res => res.json())
+    .then (data => this.list = [...this.list,...data.Result])
+    .then ( () => fetch(`${this.auth.url}api/AutomationScripts/GetAutomationScripts?api-version=53`,{
+      method:'post',
+      headers:{'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.auth.token,
+                'Accept': 'application/json'},
+      body: `{
+        "IsActive": false 
+      }`
+      })
+    )
+    .then (res => res.json())
+    .then (data => this.list = [...this.list,...data.Result])
+  }
+
+  
+}
+
+/**
+ * Class for handle script on caseone
+ * 
+ * @param {object} auth - object contain api-key for authorization
+ * 
+ */
+class Script {
+  constructor (auth) {
+    this.auth = auth;
+  }
+  /**
+   * list of all type of caseone scripts
+   */
+  typesOfScript = [
+    {
+      SysName: 'Default',
+      Id: '09cc3b78-73c5-e911-90ee-0cc47afb2adf',
+      Name: 'Авто'
+    },
+    {
+      SysName: 'Repeat',
+      Id: '0acc3b78-73c5-e911-90ee-0cc47afb2adf',
+      Name: 'По расписанию'
+    },
+    {
+      SysName: 'Manual',
+      Id: 'a8629985-73c5-e911-90ee-0cc47afb2adf',
+      Name: 'Ручной'
+    },
+    {
+      SysName: 'Script',
+      Id: 'b9629985-73c5-e911-90ee-0cc47afb2adf',
+      Name: 'Скрипт'
+    }   
+  ]    
+
+  /**
+   * method for create script in caseone 
+   * 
+   * @function
+   * 
+   * @param {string} name - name of script
+   * @param {number} typeOfScript - type of script 0 is default (Авто) and default if undefined typeOfScript, 1 is Repeat (по расписанию), 2 is Manual (Ручной), 3 is Script (Скрипт) 
+   * @return {object} - description of new script
+   */
+  create = (name,typeOfScript = 0) => {
+    /*
+    The body from documentation
+    `{
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "IsActive": true,
+      "Type": ${this.typesOfScript[0]},
+      "FolderId": "string"
+    }`*/
+
+    let body = {
+      "Name": name,               
+      "Type": this.typesOfScript[typeOfScript]
+    }
+    body = JSON.stringify(body);
+
+    return fetch(`${this.auth.url}/api/AutomationScripts/CreateOrUpdate?/api-version=53`,{
+      method:'put',
+      headers:{'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.auth.token,
+                'Accept': 'application/json'},
+      body: body
+      }) 
+      .then (res => res.json())
+      .then (data => data)
+ 
   }
 }
 /*
@@ -189,4 +301,6 @@ AAuth.getToken()
 });
 */
 
-module.exports.auth = Auth;
+module.exports.Auth = Auth;
+module.exports.Scripts = Scripts;
+module.exports.Script = Script;

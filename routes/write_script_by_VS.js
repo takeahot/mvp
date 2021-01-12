@@ -10,30 +10,21 @@ router.get('/', function(req, res, next) {
     p : 'PrAn!M67'
   };
 
-  console.log(VSSB.auth);
-
-  let runIq = new VSSB.auth(iqtech_mv.u,iqtech_mv.l,iqtech_mv.p);
-  runIq.getToken()
+  let auth = new VSSB.Auth(iqtech_mv.u,iqtech_mv.l,iqtech_mv.p);
+  auth.getToken()
     .then(token => {
-      {
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
-  "IsActive": true,
-  "Type": {
-    "SysName": "string",
-    "Id": "string",
-    "Name": "string"
-  },
-  "FolderId": "string"
-}
-      console.log('the token is ' + token);
+      scripts = new VSSB.Script(auth);
+      var x = scripts.create('testscript');
+      console.log ('token run');
+      return x;
+    })
+    .then(data => {
+      console.log(data);
+    })
 
-      res.locals.header = "Результаты авторизации";
-      res.locals.message = runIq
-      res.render('index',res.locals);
-    }
-  )
+      // res.locals.header = "Результаты авторизации";
+      // res.locals.message = runIq
+      // res.render('index',res.locals);
 
 });
 
