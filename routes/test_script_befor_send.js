@@ -1,3 +1,6 @@
+//import {Case} from '../src/Case.js'
+
+
 var express = require('express');
 var router = express.Router();
 var VSSB = require('../src/use_VScode_for_script_building/main.js')
@@ -13,13 +16,7 @@ router.get('/', function(req, res, next) {
   let auth = new VSSB.Auth(iqtech_mv.u,iqtech_mv.l,iqtech_mv.p);
   auth.getToken()
     .then(token => {
-      scripts = new VSSB.Script(auth);
-      var x = scripts.sendScript('Case.js');
-      console.log ('token run');
-      return x;
-    })
-    .then(data => {
-      console.log(data);
+      
     })
 
       // res.locals.header = "Результаты авторизации";

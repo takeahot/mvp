@@ -13,6 +13,8 @@ const http = require('http');
 const readline = require('readline');
 const fetch = require('node-fetch');
 const { runInThisContext } = require('vm');
+const fs = require('fs');
+const path = require('path');
 
 /*
  * simple unitlity
@@ -272,6 +274,45 @@ class Script {
       .then (res => res.json())
       .then (data => data)
  
+  }
+  /**
+   * method for create script in caseone 
+   *
+   * @function
+   * 
+   * @param {string} fileName - name of script from 'src' folder
+   * @return {object} - description of new script
+   */
+  sendScript = (fileName) => {
+    let scriptName = fileName.replace(/\..+$/gim,"");
+    return this.create(scriptName,3)
+    .then(script => {
+      console.log(script);
+      let body = {
+        "Id": script.Result.Id,
+        "Name": scriptName,
+        "Scheme": [],
+        "Type": {
+            "Id": "b9629985-73c5-e911-90ee-0cc47afb2adf"
+        },
+        "Script": {
+            "Body": fs.readFileSync(path.resolve(__dirname, "../"+fileName),'utf-8')
+        }
+      }
+
+      body = JSON.stringify(body);
+
+      return fetch(`${this.auth.url}api/AutomationScriptScheme/CreateOrUpdate?/api-version=53`,{
+        method:'post',
+        headers:{'Content-Type': 'application/json',
+                  'Authorization': 'Bearer ' + this.auth.token,
+                  'Accept': 'application/json'},
+        body: body
+        }) 
+        .then (res => res.json())
+        .then (data => data)
+    }
+    )      
   }
 }
 /*
