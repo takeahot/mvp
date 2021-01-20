@@ -14,19 +14,9 @@ router.get('/', function(req, res, next) {
   auth.getToken()
     .then(token => {
       let scripts = new VSSB.Script(auth);
-      return scripts.sendScript('Case.js');
+      return scripts.getScriptFrom('Добавление ИМ в бренд');
     })
-    .then(data => {
-      console.log(data);
-    })
-    .then(() => {
-      let script = new VSSB.Script(auth);
-      return script.sendScript('AA_external_log.js') 
-    })
-    .then(data => {
-      console.log(data);
-    })
- 
+
       // res.locals.header = "Результаты авторизации";
       // res.locals.message = runIq
       // res.render('index',res.locals);

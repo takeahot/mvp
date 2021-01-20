@@ -320,6 +320,51 @@ class Script {
     }
     )      
   }
+
+  getScriptFrom = ( nameOfScript, numberOfScriptBlock = 0) => {
+    let body = {"Name":nameOfScript,
+                "TypeIds":[], 
+                "IsActive":null, 
+                "LastEditorIds":[], 
+                "StartLastChangeDate":"",
+                "EndLastChangeDate":"",
+                "FolderId":null,
+                "Page":1,
+                "PageSize":20
+    };
+    body = JSON.stringify(body);
+
+    return fetch(`${this.auth.url}api/AutomationScripts/GetAutomationScripts?/api-version=53`,{
+        method:'post',
+        headers:{'Content-Type': 'application/json',
+                  'Authorization': 'Bearer ' + this.auth.token,
+                  'Accept': 'application/json'},
+        body: body
+      }) 
+      .then (res => res.json())
+      .then (data => {
+        console.log(data,'data1');
+        return fetch(`${this.auth.url}api/AutomationScriptScheme/Get?Id=${data.Result[0].Id}&api-version=53`,{
+            method:'get',
+            headers:{'Content-Type': 'application/json',
+                      'Authorization': 'Bearer ' + this.auth.token,
+                      'Accept': 'application/json'},
+          })   
+      })
+      .then (res => res.json())
+      .then (data => {
+        let scriptText = [];
+        console.log(data,'data');
+        if (data.Type.SysName == "Script") {
+          scriptText[0] = data.Script.Body;
+        } else 
+        {
+          scriptText = data.Scheme.filter(block => block.Type == 'Script').map(block => {return {"Description": block.Description, "Script": block.Script.Body}});
+        }
+        console.log(scriptText);
+      }) 
+    
+  }
 }
 /*
 gazprom_mv = {
