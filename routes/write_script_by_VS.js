@@ -13,15 +13,20 @@ router.get('/', function(req, res, next) {
   let auth = new VSSB.Auth(iqtech_mv.u,iqtech_mv.l,iqtech_mv.p);
   auth.getToken()
     .then(token => {
-      scripts = new VSSB.Script(auth);
-      var x = scripts.sendScript('Case.js');
-      console.log ('token run');
-      return x;
+      let scripts = new VSSB.Script(auth);
+      return scripts.sendScript('Case.js');
     })
     .then(data => {
       console.log(data);
     })
-
+    .then(() => {
+      let script = new VSSB.Script(auth);
+      return script.sendScript('AA_external_log.js') 
+    })
+    .then(data => {
+      console.log(data);
+    })
+ 
       // res.locals.header = "Результаты авторизации";
       // res.locals.message = runIq
       // res.render('index',res.locals);
