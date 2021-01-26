@@ -4,9 +4,10 @@ var VSSB = require('./lib/main.js')
 let auth = new VSSB.Auth(process.env.URL,process.env.LOGIN,process.env.PASSWORD);
   auth.getToken()
     .then(token => {
-      let scripts = new VSSB.Script(auth);
-      return scripts.getScriptFrom('Добавление ИМ в бренд');
+      let script = new VSSB.Script(auth);
+      return script.createWithScheme('Добавление ИМ в бренд');
     })
+    .then(res => console.log(res,'res'));
 
       // res.locals.header = "Результаты авторизации";
       // res.locals.message = runIq

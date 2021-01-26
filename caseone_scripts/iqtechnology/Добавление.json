@@ -1,0 +1,35 @@
+{
+  "Folder": null,
+  "Id": "d95048af-8522-eb11-90f0-0cc47afb2adf",
+  "Name": "Добавление ИМ в бренд",
+  "Description": null,
+  "IsActive": true,
+  "Scheme": [
+    {
+      "Id": "3f1ced91-d533-4f6d-b0b2-c27e3ac617be",
+      "Description": "Дополняет карточку бренд при изменении карточки ИМ",
+      "Type": "Script",
+      "WaitAction": null,
+      "NotificationCreation": null,
+      "EventCreation": null,
+      "TaskCreation": null,
+      "ProjectFilling": null,
+      "Script": {
+        "Body": "import {eLog} from 'AA_external_log';\r\n\r\neLog({\"ProjectId\": context.ProjectId,\r\n    \"EntityId\": context.EntityId\r\n    });"
+      },
+      "BlockIf": null,
+      "GoTo": null,
+      "Insert": null
+    }
+  ],
+  "Type": {
+    "SysName": "Default",
+    "Id": "09cc3b78-73c5-e911-90ee-0cc47afb2adf",
+    "Name": "Авто"
+  },
+  "RecurringRules": [],
+  "Script": null,
+  "Conditions": [],
+  "RestrictionConditions": []
+}
+
