@@ -1,0 +1,35 @@
+{
+    "id": "9135fefa-297e-11eb-b751-027b586fde61",
+    "value": "{\"entityMap\":{\"0\":{\"type\":\"FIELD\",\"mutability\":\"IMMUTABLE\",\"data\":{\"id\":\"959b0074-da69-4c6b-bfcb-c048b8d962fa\",\"location\":\"0e91781b-9bac-4322-92bb-519286024ea0\"}},\"1\":{\"type\":\"CONDITION\",\"mutability\":\"MUTABLE\",\"data\":{\"id\":\"8c9c3791-e848-465b-a9fd-6e986a52febb\"}},\"2\":{\"type\":\"CONDITION\",\"mutability\":\"MUTABLE\",\"data\":{\"id\":\"6c40734e-2a8e-4f1a-a99b-14d215ebf5dd\"}},\"3\":{\"type\":\"CONDITION\",\"mutability\":\"MUTABLE\",\"data\":{\"id\":\"2012114d-30e3-49d9-9112-70a9bf55aa4f\"}}},\"blocks\":[{\"key\":\"da7b\",\"parentKey\":\"\",\"text\":\"\",\"type\":\"document\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"9mcpi\",\"parentKey\":\"da7b\",\"text\":\"\",\"type\":\"section\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{\"width\":21,\"height\":29.7,\"margin\":{\"top\":1.27,\"left\":2.54,\"right\":2.54,\"bottom\":1.27}}},{\"key\":\"7ghn3\",\"parentKey\":\"9mcpi\",\"text\":\"\",\"type\":\"header\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"2bmk0\",\"parentKey\":\"7ghn3\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"a9f5s\",\"parentKey\":\"9mcpi\",\"text\":\"\",\"type\":\"content\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"3kmcr\",\"parentKey\":\"a9f5s\",\"text\":\"Какой то документ с поле с важной и изменяемой информацией\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[{\"offset\":20,\"length\":38,\"key\":0}],\"data\":{}},{\"key\":\"8i41u\",\"parentKey\":\"a9f5s\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"7iaqf\",\"parentKey\":\"a9f5s\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"638up\",\"parentKey\":\"a9f5s\",\"text\":\"Текст есил документ типа 1\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[{\"offset\":0,\"length\":26,\"key\":1}],\"data\":{}},{\"key\":\"5gq3i\",\"parentKey\":\"a9f5s\",\"text\":\"Текст если документ типа 2\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[{\"offset\":0,\"length\":26,\"key\":2}],\"data\":{}},{\"key\":\"52nhr\",\"parentKey\":\"a9f5s\",\"text\":\"Документ типа 3\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[{\"offset\":0,\"length\":15,\"key\":3}],\"data\":{}},{\"key\":\"cpk12\",\"parentKey\":\"a9f5s\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"bpmia\",\"parentKey\":\"9mcpi\",\"text\":\"\",\"type\":\"footer\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"2ctjs\",\"parentKey\":\"bpmia\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}]}",
+    "name": "Пример шаблона для простого сотрудника",
+    "document_name": [
+        {
+            "id": "documentCounter"
+        },
+        {
+            "id": "text",
+            "value": " - "
+        },
+        {
+            "id": "title"
+        }
+    ],
+    "download_formats": [
+        {
+            "name": "docx",
+            "selected": true
+        },
+        {
+            "name": "pdf",
+            "selected": false
+        }
+    ],
+    "header_settings": {
+        "first_page": false,
+        "header_from_top": 1.5,
+        "footer_from_bottom": 1.5,
+        "counter_start_at": 1
+    },
+    "entities": "{\"nodes\":{\"0e91781b-9bac-4322-92bb-519286024ea0\":{\"id\":\"0e91781b-9bac-4322-92bb-519286024ea0\",\"type\":\"FIELD\",\"parent\":null,\"children\":[]},\"2012114d-30e3-49d9-9112-70a9bf55aa4f\":{\"id\":\"2012114d-30e3-49d9-9112-70a9bf55aa4f\",\"type\":\"CONDITION\",\"parent\":null,\"children\":[]},\"6c40734e-2a8e-4f1a-a99b-14d215ebf5dd\":{\"id\":\"6c40734e-2a8e-4f1a-a99b-14d215ebf5dd\",\"type\":\"CONDITION\",\"parent\":null,\"children\":[]},\"8c9c3791-e848-465b-a9fd-6e986a52febb\":{\"id\":\"8c9c3791-e848-465b-a9fd-6e986a52febb\",\"type\":\"CONDITION\",\"parent\":null,\"children\":[]}},\"fields\":[{\"id\":\"959b0074-da69-4c6b-bfcb-c048b8d962fa\",\"data\":[],\"hint\":\"поле с важной и изменяемой информацией\",\"type\":\"text\",\"title\":\"поле с важной и изменяемой информацией\",\"value\":\"\",\"hidden\":false,\"required\":true,\"locations\":[{\"id\":\"0e91781b-9bac-4322-92bb-519286024ea0\"}]}],\"macroses\":[],\"conditions\":[{\"id\":\"8c9c3791-e848-465b-a9fd-6e986a52febb\",\"unionOperator\":\"and\",\"items\":[[\"164d1fe8-e237-450c-8659-1d00ed3c8611\",\"f82ad69e-0527-4f86-8941-fa202f96426d\"]]},{\"id\":\"6c40734e-2a8e-4f1a-a99b-14d215ebf5dd\",\"unionOperator\":\"and\",\"items\":[[\"164d1fe8-e237-450c-8659-1d00ed3c8611\",\"e4ee5f37-f4ba-4035-87f5-4c7f08d2e8bb\"]]},{\"id\":\"2012114d-30e3-49d9-9112-70a9bf55aa4f\",\"unionOperator\":\"and\",\"items\":[[\"164d1fe8-e237-450c-8659-1d00ed3c8611\",\"c03d8441-37e8-4700-8c03-c5c782d343b5\"]]}],\"questions\":[{\"answers\":[{\"id\":\"f82ad69e-0527-4f86-8941-fa202f96426d\",\"title\":\"1 тип\",\"hint\":\"\",\"checked\":true},{\"id\":\"e4ee5f37-f4ba-4035-87f5-4c7f08d2e8bb\",\"title\":\"2 тип\",\"hint\":\"\",\"checked\":false},{\"id\":\"c03d8441-37e8-4700-8c03-c5c782d343b5\",\"title\":\"3 тип\",\"hint\":\"\",\"checked\":false}],\"id\":\"164d1fe8-e237-450c-8659-1d00ed3c8611\",\"title\":\"тип документа\",\"hint\":\"\",\"externalId\":null,\"singleChoice\":true,\"hidden\":false}]}",
+    "createSnapshot": true
+}

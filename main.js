@@ -1,14 +1,15 @@
 require('dotenv').config();
 var VSSB = require('./lib/main.js') 
-
-let auth = new VSSB.Auth(process.env.URL,process.env.LOGIN,process.env.PASSWORD);
-  auth.getToken()
-    .then(token => {
-      let script = new VSSB.Script(auth);
-      return script.createWithScheme('Добавление ИМ в бренд');
-    })
-    .then(res => console.log(res,'res'));
-
+ // copy from d1 to d1
+let fD1toD1 = async () => {
+  let auth = new VSSB.DocAuth(process.env.DURL,process.env.DLOGIN,process.env.DPASSWORD);
+  let template = new VSSB.Template(auth)
+  Data = await template.getTemplateById("9135fefa-297e-11eb-b751-027b586fde61");
+  let auth2 = new VSSB.DocAuth(process.env.DURL2,process.env.DLOGIN2,process.env.DPASSWORD2)
+  let template2 = new VSSB.Template(auth2)
+  let result = await template2.setTemplateFromData(Data);
+}
+fD1toD1()
       // res.locals.header = "Результаты авторизации";
       // res.locals.message = runIq
       // res.render('index',res.locals);

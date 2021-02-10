@@ -1,0 +1,173 @@
+{  
+   "entityMap": {
+    "0": {
+      "type": "FIELD",
+      "mutability": "IMMUTABLE",
+      "data": {
+        "id": "959b0074-da69-4c6b-bfcb-c048b8d962fa",
+        "location": "0e91781b-9bac-4322-92bb-519286024ea0"
+      }
+    },
+    "1": {
+      "type": "CONDITION",
+      "mutability": "MUTABLE",
+      "data": { "id": "8c9c3791-e848-465b-a9fd-6e986a52febb" }
+    },
+    "2": {
+      "type": "CONDITION",
+      "mutability": "MUTABLE",
+      "data": { "id": "6c40734e-2a8e-4f1a-a99b-14d215ebf5dd" }
+    },
+    "3": {
+      "type": "CONDITION",
+      "mutability": "MUTABLE",
+      "data": { "id": "2012114d-30e3-49d9-9112-70a9bf55aa4f" }
+    }
+  },
+  "blocks": [
+    {
+      "key": "da7b",
+      "data": {},
+      "text": "",
+      "type": "document",
+      "depth": 0,
+      "parentKey": "",
+      "entityRanges": [],
+      "inlineStyleRanges": []
+    },
+    {
+      "key": "9mcpi",
+      "parentKey": "da7b",
+      "text": "",
+      "type": "section",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {
+        "width": 21,
+        "height": 29.7,
+        "margin": { "top": 1.27, "left": 2.54, "right": 2.54, "bottom": 1.27 }
+      }
+    },
+    {
+      "key": "7ghn3",
+      "data": {},
+      "text": "",
+      "type": "header",
+      "depth": 0,
+      "parentKey": "9mcpi",
+      "entityRanges": [],
+      "inlineStyleRanges": []
+    },
+    {
+      "key": "2bmk0",
+      "data": {},
+      "text": "",
+      "type": "unstyled",
+      "depth": 0,
+      "parentKey": "7ghn3",
+      "entityRanges": [],
+      "inlineStyleRanges": []
+    },
+    {
+      "key": "a9f5s",
+      "data": {},
+      "text": "",
+      "type": "content",
+      "depth": 0,
+      "parentKey": "9mcpi",
+      "entityRanges": [],
+      "inlineStyleRanges": []
+    },
+    {
+      "key": "3kmcr",
+      "data": {},
+      "text": "Какой то документ с поле с важной и изменяемой информацией",
+      "type": "unstyled",
+      "depth": 0,
+      "parentKey": "a9f5s",
+      "entityRanges": [{ "key": 0, "length": 38, "offset": 20 }],
+      "inlineStyleRanges": []
+    },
+    {
+      "key": "8i41u",
+      "data": {},
+      "text": "",
+      "type": "unstyled",
+      "depth": 0,
+      "parentKey": "a9f5s",
+      "entityRanges": [],
+      "inlineStyleRanges": []
+    },
+    {
+      "key": "7iaqf",
+      "data": {},
+      "text": "",
+      "type": "unstyled",
+      "depth": 0,
+      "parentKey": "a9f5s",
+      "entityRanges": [],
+      "inlineStyleRanges": []
+    },
+    {
+      "key": "638up",
+      "data": {},
+      "text": "Текст есил документ типа 1",
+      "type": "unstyled",
+      "depth": 0,
+      "parentKey": "a9f5s",
+      "entityRanges": [{ "key": 1, "length": 26, "offset": 0 }],
+      "inlineStyleRanges": []
+    },
+    {
+      "key": "5gq3i",
+      "data": {},
+      "text": "Текст если документ типа 2",
+      "type": "unstyled",
+      "depth": 0,
+      "parentKey": "a9f5s",
+      "entityRanges": [{ "key": 2, "length": 26, "offset": 0 }],
+      "inlineStyleRanges": []
+    },
+    {
+      "key": "52nhr",
+      "data": {},
+      "text": "Документ типа 3",
+      "type": "unstyled",
+      "depth": 0,
+      "parentKey": "a9f5s",
+      "entityRanges": [{ "key": 3, "length": 15, "offset": 0 }],
+      "inlineStyleRanges": []
+    },
+    {
+      "key": "cpk12",
+      "data": {},
+      "text": "",
+      "type": "unstyled",
+      "depth": 0,
+      "parentKey": "a9f5s",
+      "entityRanges": [],
+      "inlineStyleRanges": []
+    },
+    {
+      "key": "bpmia",
+      "data": {},
+      "text": "",
+      "type": "footer",
+      "depth": 0,
+      "parentKey": "9mcpi",
+      "entityRanges": [],
+      "inlineStyleRanges": []
+    },
+    {
+      "key": "2ctjs",
+      "data": {},
+      "text": "",
+      "type": "unstyled",
+      "depth": 0,
+      "parentKey": "bpmia",
+      "entityRanges": [],
+      "inlineStyleRanges": []
+    }
+  ],
+}
