@@ -1,7 +1,13 @@
-// for copy template from D2 to D1
-//require(fromD1toD1); // don't check works it
+//param
+const dbg = 1;
 
-// for copy workflow from C1 to C1 
-// require (conyWorkFlowFromC1toC1); // don't check works it
+//dependecies
+require('dotenv').config();
+const m = require('./lib/mainWithSyncFetchLikeC1.js');
 
+//main
+const c = new m.S(dbg).c;
+
+let sourceToken = new m.Token(process.env.CURL,process.env.CLOGIN,process.env.CPASSWORD);
+let targetToken = new m.Token(process.env.CURL2,process.env.CLOGIN2,process.env.CPASSWORD2);
 
