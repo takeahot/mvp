@@ -17,8 +17,14 @@ let sourceReq = new m.Requests(sourceToken);
 
 // firstId = sourceReq.getListReq()[0].Id;
 let id = '75cb8dfe-8607-4b0b-815c-ac3e006ba608'
-let req = sourceReq.getReq(id).body;
-// c(req.Result);
+let req = JSON.parse(sourceReq.getReq(id).body);
+let modernReq = sourceReq.makeModernReq(req);
+
+let targetReq = new m.Requests(targetToken); 
+// c(modernReq.Result.Intake);
+let iF = targetReq.findIntakeFormByName(modernReq.Result.IntakeForm.Name);
+
+c(JSON.stringify(iF));
 // c(req.Result.Blocks);
 // c(req.Result.MetadataOfBlocks);
 
