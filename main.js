@@ -12,7 +12,6 @@ const c = newS.c.bind(newS);
 let sourceToken = new m.Token(process.env.CURL,process.env.CLOGIN,process.env.CPASSWORD);
 let targetToken = new m.Token(process.env.CURL2,process.env.CLOGIN2,process.env.CPASSWORD2);
 
-c(sourceToken);
 let sourceReq = new m.Requests(sourceToken);
 
 // firstId = sourceReq.getListReq()[0].Id;
@@ -24,7 +23,11 @@ let targetReq = new m.Requests(targetToken);
 // c(modernReq.Result.Intake);
 let iF = targetReq.findIntakeFormByName(modernReq.Result.IntakeForm.Name);
 
-c(JSON.stringify(iF));
+modernReq = modernReq.Result;
+modernReq.IntakeForm = {"Id": iF.Result.Id};
+c(JSON.stringify(modernReq.IntakeForm));
+c('modernReq');
+// c(JSON.stringify(iF));
 // c(req.Result.Blocks);
 // c(req.Result.MetadataOfBlocks);
 
