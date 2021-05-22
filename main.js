@@ -18,14 +18,15 @@ let sourceReq = new m.Requests(sourceToken);
 let id = '75cb8dfe-8607-4b0b-815c-ac3e006ba608'
 let req = JSON.parse(sourceReq.getReq(id).body);
 let modernReq = sourceReq.makeModernReq(req);
+modernReq = modernReq.Result;
 
 let targetReq = new m.Requests(targetToken); 
 // c(modernReq.Result.Intake);
-let iF = targetReq.findIntakeFormByName(modernReq.Result.IntakeForm.Name);
+let iF = targetReq.findIntakeFormByName(modernReq.IntakeForm.Name).Result;
 
-modernReq = modernReq.Result;
-modernReq.IntakeForm = {"Id": iF.Result.Id};
-c(JSON.stringify(modernReq.IntakeForm));
+modernReq.IntakeForm = {"Id": iF.Id};
+
+c(JSON.stringify(modernReq));
 c('modernReq');
 // c(JSON.stringify(iF));
 // c(req.Result.Blocks);
