@@ -26,8 +26,8 @@ JSON.parse(process.env.DTEMPLATELIST).map(id => fD1toD1(id));
 //         "Content-Type": "application/json",
 //       },
 //       body: JSON.stringify({
-//           "email":"a.arestov@pravo.tech",
-//           "password":"PrAnAM67"
+//           "email":"",
+//           "password":""
 //           })
 //   }
 //   context.login = await fetch(obj.url, {method: obj.method, headers: obj.headers, body: obj.body});
